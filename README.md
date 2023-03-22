@@ -31,7 +31,7 @@ interface IContravariant<in T>{
 
 }
 ```
-Sadece parametre olarak kullanabileceğimiz için ``` GetById ``` metotdu hata verecektir. <br>
+Sadece parametre olarak kullanabileceğimiz için ``` GetById ``` metodu hata verecektir. <br>
 Bu hatanın açıklaması ise, T'nin dönüş tipi olarak kullanılabilmesi için ``` covartiant ``` olması gerektiği ama T'nin şu anda ``` contravariant ``` olduğudur.
 
 ## Covariant 
@@ -46,7 +46,7 @@ interface ICovariant<out T>{
   
 }
 ```
-Sadece dönüş tipi olarak kullanabileceğimiz için ``` Insert ``` metotdunda hata alırız. <br>
+Sadece dönüş tipi olarak kullanabileceğimiz için ``` Insert ``` metodunda hata alırız. <br>
 Bu hatanın açıklaması ise, T'nin parametre olarak kullanılabilmesi için ``` contravariant ``` olması gerektiği ama T'nin şu anda ``` covariant ``` olduğudur.
 
 
