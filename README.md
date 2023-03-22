@@ -21,7 +21,7 @@ interface IGeneric<T>{
 
 ## Contravariant 
 Eğer ki Generic Interface'imizin parametresinin önüne ``` in ``` anahtar kelimesi gelirse, bunun anlamı onu <br>
-yazacağımız metotlarda sadece parametre olarak geçebileceğimiz anlamına gelir.
+yazacağımız metotlarda sadece parametre olarak geçebileceğimizdir.
 
 ```
 interface IContravariant<in T>{
