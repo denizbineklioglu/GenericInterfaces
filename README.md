@@ -52,6 +52,8 @@ Bu hatanın açıklaması ise, T'nin parametre olarak kullanılabilmesi için ``
 
 ## Farklı Örnekler
 
+<li>İki Farklı parametre ile</li><br>
+
 ```
 interface IGenericRepository<out T,in Z>{
    
@@ -60,10 +62,47 @@ interface IGenericRepository<out T,in Z>{
   
 }
 ```
+Bu örnekte Generic Interface'te iki farklı tür parametre geçilmiş. T sadece dönüş tipi olarak kullanılabilirken, Z sadece parametre olarak kullanılabilir.<br>
+<br>
 
-Bu örnekte Generic Interface'te iki farklı tür parametre geçilmiş. T sadece dönüş tipi olarak kullanılabilirken, Z sadece parametre olarak kullanılabilir.
+<li>Class Üzerinden</li><br>
 
+```
+  public class Computer
+    {
+        public int ID { get; set; }
+        public string Name { get; set; }
+    }
+```
+Bir Computer class'ı oluşturduk ve bu class ile ilgili işlemleri yapacak bir ``` ComputerManager ``` class'ı oluşturalım.
 
+```
+public class ComputerManager : IContravariant<Computer>,ICovariant<Computer> 
+    {
+        public Computer GetByID(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Insert(Computer t)
+        {
+            throw new NotImplementedException();
+        }
+    }
+```
+Managera önceden oluşturduğumuz interfaceleri implement ettim. Böylelikler Computer classı hem parametre hem de dönüş tipi olarak kullanıldı.
+
+```
+Computer computer = new()
+{
+    ID = 1,
+    Name = "Monster"
+};
+
+ComputerManager cm = new();
+cm.Insert(computer);
+Computer c = cm.GetByID(computer.ID);
+```
 
 
 
