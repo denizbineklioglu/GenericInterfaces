@@ -1,5 +1,5 @@
 
-<h1>Generic Interfacelerde Covariant ve Contravariant Kavramları</h1>
+## Generic Interfacelerde Covariant ve Contravariant
 
 Örnek bir Interface
 ```
