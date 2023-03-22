@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Channels;
 using System.Threading.Tasks;
 
 namespace GenericInterfaces
@@ -28,6 +29,34 @@ namespace GenericInterfaces
     {
         Action<T> GetAction();
         //Func<T> GetFunc();
+    }
+
+
+    class Car : ICovariant<Car>
+    {
+        public Car GetByID(int id)
+        {
+            throw new NotImplementedException();
+        }
+    }
+
+    public class Computer
+    {
+        public int ID { get; set; }
+        public string Name { get; set; }
+    }
+
+    public class ComputerManager : IContravariant<Computer>,ICovariant<Computer> 
+    {
+        public Computer GetByID(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Insert(Computer t)
+        {
+            throw new NotImplementedException();
+        }
     }
 
 }
