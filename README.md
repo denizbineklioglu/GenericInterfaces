@@ -90,7 +90,7 @@ public class ComputerManager : IContravariant<Computer>,ICovariant<Computer>
         }
     }
 ```
-Managera önceden oluşturduğumuz interfaceleri implement ettim. Böylelikler Computer classı hem parametre hem de dönüş tipi olarak kullanıldı.
+Managera önceden oluşturduğumuz interfaceleri implement ettim. Böylelikle Computer class hem parametre hem de dönüş tipi olarak kullanıldı.
 
 ```
 Computer computer = new()
