@@ -24,7 +24,7 @@ Eğer ki Generic Interface'imizin parametresinin önüne ``` in ``` anahtar keli
 yazacağımız metotlarda sadece parametre olarak geçebileceğimizdir.
 
 ```
-interface IContravariant<in T>{
+public interface IContravariant<in T>{
 
   //T GetById(int id); Bu satır hata verir.
   void Insert(T t);
@@ -39,7 +39,7 @@ Eğer ki Generic Interface'imizin parametresinin önüne ``` out ``` anahtar kel
 sadece yazacağımız metotlarda dönüş tipi olarak geçebileceğimiz anlamına gelir.
 
 ```
-interface ICovariant<out T>{
+public interface ICovariant<out T>{
   
   T GetById(int id);
   //void Insert(T t); Hata verir.
